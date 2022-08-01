@@ -1,15 +1,17 @@
-import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
+import { StyleSheet, Text, Image, View, TouchableOpacity } from 'react-native';
 import Title from '../components/title';
-import { TouchableOpacity } from 'react-native-web';
-import GOT from '../assets/game-of-thrones.jpeg';
 
 const home = () => {
   return (
     <View>
       <Title />
-      <View>
-        <GOT />
+      <View style={styles.bannerContainer}>
+        <Image
+          source={require('../assets/game-of-thrones.jpeg')}
+          style={styles.banner}
+          resizeMode="contain"
+        />
       </View>
       <TouchableOpacity>
         <Text>Start</Text>
@@ -20,4 +22,13 @@ const home = () => {
 
 export default home;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  banner: {
+    height: 300,
+    width: 300
+  },
+  bannerContainer: {
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+});
